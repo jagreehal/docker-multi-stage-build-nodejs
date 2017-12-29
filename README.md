@@ -1,5 +1,7 @@
 # Docker multi stage builds for node.js apps
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jagreehal/docker-multi-stage-build-nodejs.svg)](https://greenkeeper.io/)
+
 Following on from https://glebbahmutov.com/blog//making-small-docker-image/ by Dr. Gleb Bahmutov PhD
 
 This example shows how to build node.js apps using Docker multi stage builds
