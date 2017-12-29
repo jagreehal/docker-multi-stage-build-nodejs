@@ -4,13 +4,13 @@ WORKDIR /app
 COPY package.json .
 COPY .eslintrc.json .
 
-RUN npm install
+RUN yarn
 
 COPY ./src ./src
 
-RUN npm run lint
+RUN yarn run lint
 
-RUN npm run test
+RUN yarn run test
 
 EXPOSE 1337
 CMD ["node", "src/index.js"]

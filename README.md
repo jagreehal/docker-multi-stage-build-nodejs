@@ -1,4 +1,5 @@
 # Docker multi stage builds for node.js apps
+[![Build Status](https://travis-ci.org/jagreehal/docker-multi-stage-build-nodejs.svg)](https://travis-ci.org/jagreehal/docker-multi-stage-build-nodejs)
 
 Following on from https://glebbahmutov.com/blog//making-small-docker-image/ by Dr. Gleb Bahmutov PhD
 

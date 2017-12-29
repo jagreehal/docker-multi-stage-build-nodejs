@@ -1,8 +1,8 @@
 # include npm as we have production dependency
 FROM mhart/alpine-node:9 as BASE
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install --production
+COPY package.json yarn.lock ./
+RUN yarn install --production
 COPY ./src ./src
 
 # test image installs development dependencies
@@ -15,11 +15,11 @@ FROM BASE as TEST
 COPY --from=BASE /app .
 COPY .eslintrc.json .
 
-RUN npm install
-RUN npm run lint
-RUN npm run test
+RUN yarn
+RUN yarn run lint
+RUN yarn run test
 
-# final production image uses base no NPM here
+# final production image uses base no npm or yarn here
 FROM mhart/alpine-node:base-9
 COPY --from=BASE /app .
 

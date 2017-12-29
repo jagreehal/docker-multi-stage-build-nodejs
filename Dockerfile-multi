@@ -2,16 +2,16 @@
 FROM mhart/alpine-node:9 as BASE
 WORKDIR /app
 COPY package.json .
-RUN npm install --production
+RUN yarn install --production
 COPY ./src ./src
 
 # test image installs development dependencies
 # and runs testing commands
 FROM BASE as TEST
-RUN npm install
+RUN yarn
 COPY .eslintrc.json .
-RUN npm run lint
-RUN npm run test
+RUN yarn run lint
+RUN yarn run test
 
 # final production image
 FROM BASE as PROD
