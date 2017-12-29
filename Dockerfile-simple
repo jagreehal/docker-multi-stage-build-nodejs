@@ -1,0 +1,16 @@
+FROM mhart/alpine-node:9
+
+WORKDIR /app
+COPY package.json .
+COPY .eslintrc.json .
+
+RUN npm install
+
+COPY ./src ./src
+
+RUN npm run lint
+
+RUN npm run test
+
+EXPOSE 1337
+CMD ["node", "src/index.js"]

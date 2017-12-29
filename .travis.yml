@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+  
+addons:
+  packages:
+    - docker-ce  
+
+script:
+  - docker build -t "jagreehal/docker-multi-stage-build-node-app:latest" .

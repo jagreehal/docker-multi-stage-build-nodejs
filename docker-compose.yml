@@ -1,0 +1,24 @@
+version: '2.2'
+
+services:  
+  bare:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+          - "5556:1337"
+  multi:
+      build:
+        context: .
+        dockerfile: Dockerfile-multi
+      ports:
+          - "5557:1337"
+  simple:
+      build:
+        context: .
+        dockerfile: Dockerfile-simple
+      ports:
+          - "5555:1337"
+      volumes:
+        - "./src:/app/src"        
+      command: node_modules/.bin/nodemon ./src/index.js          

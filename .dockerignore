@@ -1,0 +1,6 @@
+.git
+node_modules
+.travis.yml
+Dockerfile
+Dockerfile-simple
+Dockerfile-bare

@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ]
+  }
+}

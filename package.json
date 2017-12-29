@@ -1,0 +1,39 @@
+{
+  "name": "docker-multi-stage-build-nodejs",
+  "version": "1.0.0",
+  "description": "git init",
+  "main": "src/index.js",
+  "scripts": {
+    "build_all": "npm run build_bare && npm run build_multi && npm run build_simple",
+    "build_bare": "docker build -t jagreehal/dmsbna:bare .",
+    "build_multi": "docker build -t jagreehal/dmsbna:multi-stage -f Dockerfile-multi .",
+    "build_simple": "docker build -t jagreehal/dmsbna:simple -f Dockerfile-simple .",
+    "containers_remove": "docker ps -a | grep \"dmsbna\" | awk \"{print $3}\" | xargs docker rmi",
+    "history_bare": "docker history jagreehal/dmsbna:bare",
+    "history_multi": "docker history jagreehal/dmsbna:multi-stage",
+    "history_simple": "docker history jagreehal/dmsbna:simple",    
+    "images_list": "docker images jagreehal/dmsbna",
+    "images_remove": "docker rmi $(docker images | grep 'jagreehal/dmsbna' | awk '{print $3}')",    
+    "lint": "eslint 'src/**'",    
+    "node_modules_size": "du -h node_modules",
+    "time_install": "rm -rf node_modules && time npm install",
+    "test": "jest"
+  },
+  "author": "Jag Reehal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-prettier": "2.4.0",
+    "eslint-plugin-react": "7.5.1",
+    "jest": "22.0.4",
+    "nodemon": "1.14.5",
+    "prettier": "1.9.2"
+  }
+}
