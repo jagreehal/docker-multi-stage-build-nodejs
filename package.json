@@ -33,7 +33,7 @@
     "eslint-plugin-prettier": "2.4.0",
     "eslint-plugin-react": "7.5.1",
     "jest": "22.0.4",
-    "nodemon": "1.14.6",
+    "nodemon": "1.17.5",
     "prettier": "1.9.2"
   }
 }
